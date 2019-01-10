@@ -1,0 +1,1760 @@
+[
+    {
+        "id": "5b8f98e1.463658",
+        "type": "tab",
+        "label": "ZoomWWSMigrator",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "880a4ebe.470c7",
+        "type": "catch",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "scope": null,
+        "x": 80,
+        "y": 900,
+        "wires": [
+            [
+                "219813ee.4d67bc"
+            ]
+        ]
+    },
+    {
+        "id": "219813ee.4d67bc",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 490,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "ad1ef6a6.8f10d8",
+        "type": "http in",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "url": "/zoom",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 90,
+        "y": 400,
+        "wires": [
+            [
+                "48fa5767.146228",
+                "61280139.a681c"
+            ]
+        ]
+    },
+    {
+        "id": "48fa5767.146228",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 490,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "90aab11a.27c9f",
+        "type": "http in",
+        "z": "5b8f98e1.463658",
+        "name": "Verify",
+        "url": "zoomverify/verifyzoom.html",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 70,
+        "y": 440,
+        "wires": [
+            [
+                "5a21f35.becb60c",
+                "3b39fc54.082944"
+            ]
+        ]
+    },
+    {
+        "id": "5a21f35.becb60c",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 490,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "3b39fc54.082944",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "func": "msg.payload = \"zoomverifytoken\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 210,
+        "y": 440,
+        "wires": [
+            [
+                "84cf2fe8.1af9",
+                "47cd82aa.3db8ac"
+            ]
+        ]
+    },
+    {
+        "id": "84cf2fe8.1af9",
+        "type": "http response",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 340,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "47cd82aa.3db8ac",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 490,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "474b696f.d85b7",
+        "type": "http in",
+        "z": "5b8f98e1.463658",
+        "name": "Support",
+        "url": "Zoom/support",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 70,
+        "y": 520,
+        "wires": [
+            [
+                "7c016f0b.c558b8",
+                "12386b80.734365"
+            ]
+        ]
+    },
+    {
+        "id": "b32dfa1d.f6a3b",
+        "type": "http in",
+        "z": "5b8f98e1.463658",
+        "name": "Logout",
+        "url": "zoom/logout",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 70,
+        "y": 560,
+        "wires": [
+            [
+                "e5a1cb66.6a7948",
+                "52a29691.a08d28"
+            ]
+        ]
+    },
+    {
+        "id": "1a950a.a753d2f6",
+        "type": "http in",
+        "z": "5b8f98e1.463658",
+        "name": "policy",
+        "url": "zoom/policy",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 70,
+        "y": 600,
+        "wires": [
+            [
+                "912a939d.ea1528",
+                "535d6e29.0e40e"
+            ]
+        ]
+    },
+    {
+        "id": "b559f941.a534c8",
+        "type": "http in",
+        "z": "5b8f98e1.463658",
+        "name": "config",
+        "url": "zoom/config",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 70,
+        "y": 640,
+        "wires": [
+            [
+                "56cbb7c.cd19bc8",
+                "de08e7ba.5102a8"
+            ]
+        ]
+    },
+    {
+        "id": "ebc7b6be.05c498",
+        "type": "http response",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 340,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "4da3d91f.952388",
+        "type": "http response",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 340,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "a39dad3e.0a5fa8",
+        "type": "http response",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 340,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "ad6e5f24.c312f",
+        "type": "http response",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 340,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "7c016f0b.c558b8",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "func": "msg.payload = 'to be done';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 210,
+        "y": 520,
+        "wires": [
+            [
+                "ad6e5f24.c312f"
+            ]
+        ]
+    },
+    {
+        "id": "e5a1cb66.6a7948",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "func": "msg.payload = 'to be done';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 210,
+        "y": 560,
+        "wires": [
+            [
+                "a39dad3e.0a5fa8"
+            ]
+        ]
+    },
+    {
+        "id": "912a939d.ea1528",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "func": "msg.paylod = 'to be done';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 210,
+        "y": 600,
+        "wires": [
+            [
+                "4da3d91f.952388"
+            ]
+        ]
+    },
+    {
+        "id": "56cbb7c.cd19bc8",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "func": "msg.payload = 'to be done';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 210,
+        "y": 640,
+        "wires": [
+            [
+                "ebc7b6be.05c498"
+            ]
+        ]
+    },
+    {
+        "id": "61280139.a681c",
+        "type": "http response",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 340,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "b07592b9.3743b",
+        "type": "http in",
+        "z": "5b8f98e1.463658",
+        "name": "callback",
+        "url": "zoom/callback",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 80,
+        "y": 680,
+        "wires": [
+            [
+                "801926cc.c8cdf8",
+                "85230d16.1fee3"
+            ]
+        ]
+    },
+    {
+        "id": "8ad385fc.794f18",
+        "type": "http response",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 340,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "801926cc.c8cdf8",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "func": "msg.payload = 'to be done';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 210,
+        "y": 680,
+        "wires": [
+            [
+                "8ad385fc.794f18"
+            ]
+        ]
+    },
+    {
+        "id": "85230d16.1fee3",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 490,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "4d453dd5.7ef0ac",
+        "type": "http in",
+        "z": "5b8f98e1.463658",
+        "name": "wwsbot",
+        "url": "zoom/wwsbot",
+        "method": "post",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 70,
+        "y": 720,
+        "wires": [
+            [
+                "5abf864f.cb0558",
+                "d683022d.f5eb1",
+                "a9c89d48.1fdf28"
+            ]
+        ]
+    },
+    {
+        "id": "a9c89d48.1fdf28",
+        "type": "http response",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 340,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "6263d41d.898d4c",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "zoommsg",
+        "func": "msg.headers={};\nmsg.headers.authorization = \"Bearer \" + global.get(\"zoomToken\");\nmsg.headers[\"Content-type\"] = 'application/json';\nmsg.url = \"https://api.zoom.us/v2/im/chat/messages\";\nmsg.payload = { robot_jid: msg.zoommsg.robotJid, //located in marketplace, bot JID \n                to_jid: msg.zoommsg.toJid, //group jid or user account_Id\n                account_id: msg.zoommsg.accountId, //user account ID\n                content: msg.answer\n};\n//node.warn(msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1480,
+        "y": 780,
+        "wires": [
+            [
+                "5659e73c.fab1a8",
+                "a1b69446.6d03f8"
+            ]
+        ]
+    },
+    {
+        "id": "5abf864f.cb0558",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 490,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "3fb5bdd7.6cf07a",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 490,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "a20f6693.d16658",
+        "type": "http in",
+        "z": "5b8f98e1.463658",
+        "name": "install",
+        "url": "zoom/install",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 70,
+        "y": 760,
+        "wires": [
+            [
+                "e1be1602.84825",
+                "3fb5bdd7.6cf07a"
+            ]
+        ]
+    },
+    {
+        "id": "3694fd4f.55241a",
+        "type": "http response",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 340,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "e1be1602.84825",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "func": "msg.payload = '';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 210,
+        "y": 760,
+        "wires": [
+            [
+                "3694fd4f.55241a"
+            ]
+        ]
+    },
+    {
+        "id": "de08e7ba.5102a8",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 490,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "535d6e29.0e40e",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 490,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "52a29691.a08d28",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 490,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "12386b80.734365",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 490,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "5bb08b19.ab6a34",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 490,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "26453b65.5199c4",
+        "type": "http in",
+        "z": "5b8f98e1.463658",
+        "name": "devhook",
+        "url": "zoom/dhook",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 80,
+        "y": 800,
+        "wires": [
+            [
+                "ae89c284.bb15f",
+                "5bb08b19.ab6a34"
+            ]
+        ]
+    },
+    {
+        "id": "d5b1e81a.909ba8",
+        "type": "http response",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 340,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "ae89c284.bb15f",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "func": "return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 210,
+        "y": 800,
+        "wires": [
+            [
+                "d5b1e81a.909ba8"
+            ]
+        ]
+    },
+    {
+        "id": "fd85002b.ca446",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 490,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "c75730f0.ae20e",
+        "type": "http in",
+        "z": "5b8f98e1.463658",
+        "name": "prodhook",
+        "url": "zoom/phook",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 80,
+        "y": 840,
+        "wires": [
+            [
+                "efe68a32.940118",
+                "fd85002b.ca446"
+            ]
+        ]
+    },
+    {
+        "id": "14021a87.3f0e55",
+        "type": "http response",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 340,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "efe68a32.940118",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "func": "return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 210,
+        "y": 840,
+        "wires": [
+            [
+                "14021a87.3f0e55"
+            ]
+        ]
+    },
+    {
+        "id": "5a56cda3.695504",
+        "type": "inject",
+        "z": "5b8f98e1.463658",
+        "name": "getToken",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "3540",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 100,
+        "wires": [
+            [
+                "33eda655.7933aa"
+            ]
+        ]
+    },
+    {
+        "id": "33eda655.7933aa",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "func": "clientSecret = \"zoomClientSecret\";\nclientID = \"zoomClientId\";\nmsg.url = 'https://zoom.us/oauth/token?grant_type=client_credentials&client_id=' + clientID + '&client_secret=' + clientSecret;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 250,
+        "y": 100,
+        "wires": [
+            [
+                "ddbc6000.09021"
+            ]
+        ]
+    },
+    {
+        "id": "ddbc6000.09021",
+        "type": "http request",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "url": "",
+        "tls": "",
+        "x": 390,
+        "y": 100,
+        "wires": [
+            [
+                "70426418.1abc5c"
+            ]
+        ]
+    },
+    {
+        "id": "a248abf1.14ae78",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 650,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "70426418.1abc5c",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "func": "global.set('zoomToken',msg.payload.access_token);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 530,
+        "y": 100,
+        "wires": [
+            [
+                "a248abf1.14ae78"
+            ]
+        ]
+    },
+    {
+        "id": "51cd350.2df71cc",
+        "type": "http request",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "url": "",
+        "tls": "",
+        "x": 1850,
+        "y": 780,
+        "wires": [
+            [
+                "e06b3de.653cbc",
+                "b0b92366.ce425"
+            ]
+        ]
+    },
+    {
+        "id": "e06b3de.653cbc",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 2030,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "d683022d.f5eb1",
+        "type": "switch",
+        "z": "5b8f98e1.463658",
+        "name": "Keyword filter",
+        "property": "payload.payload.cmd",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "@migrate",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 680,
+        "y": 720,
+        "wires": [
+            [
+                "9260167.0a1f1e8"
+            ],
+            [
+                "429f5658.6db318"
+            ]
+        ]
+    },
+    {
+        "id": "429f5658.6db318",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "help",
+        "func": "msg.answer = {};\nmsg.answer = {\n  \"head\": {\n    \"text\": \"Watson Workspace Migrator: Help Message\",\n    \"style\": {\n      \"color\": \"#EEBB00\",\n      \"bold\": true\n    }\n  },\n  \"body\": [\n    {\n      \"type\": \"message\",\n      \"text\": \"Usage: /wws @migrate <WWS-space-ID>\"\n    }\n  ]\n}; //message to the group\nmsg.zoommsg = msg.payload.payload;\ndelete msg.req;\ndelete msg.res;\nmsg.payload = {};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 870,
+        "y": 740,
+        "wires": [
+            [
+                "6263d41d.898d4c"
+            ]
+        ]
+    },
+    {
+        "id": "5659e73c.fab1a8",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1670,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "476c5208.c0495c",
+        "type": "inject",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 680,
+        "y": 780,
+        "wires": [
+            [
+                "a95be83d.7ffa88"
+            ]
+        ]
+    },
+    {
+        "id": "a95be83d.7ffa88",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "test message",
+        "func": "msg.payload = {}\nmsg.payload.payload = {};\nmsg.payload.payload.robotJid = \"zoomRobotJidFromMarketplace\";\nmsg.payload.payload.toJid = \"zoomGroupChatJidFromApiCallToApi.zoom.us/v2/im/users/:userId/channels\";\nmsg.payload.payload.accountId = \"zoomAccountIDFromApiCallToApi.zoom.us/v2/users/:userId\";\nmsg.zoommsg = msg.payload.payload;\nmsg.answer = {};\nmsg.answer = {\n  \"head\": {\n    \"text\": \"Watson Workspace Migrator: TEST Message\",\n    \"style\": {\n      \"color\": \"#EEBB00\",\n      \"bold\": true\n    }\n  },\n  \"body\": [\n    {\n        \"type\": \"message\",\n        \"text\": \"Message with style\",\n        \"style\":{\n            \"color\": \"#CCCCFF\",\n            \"bold\": true \n        }\n    },\n    {\n        \"type\": \"message\",\n        \"text\": \"ZOOM-1000 New Bot message link Feature\",\n        \"link\": \"https://zoomvideo.atlassian.net/browse/ZOOM-1000\"\n    },\n    {\n        \"type\": \"actions\",\n        \"limit\": 2,\n        \"items\": [\n          {\n            \"text\": \"Update\",\n            \"event_id\": \"update\",\n            \"event\": \"sendMsg(\\\"/weather update\\\")\"\n          },\n          {\n            \"text\": \"Delete\",\n            \"event_id\": \"delete\",\n            \"event\": \"sendMsg(\\\"/weather delete\\\")\"\n          }\n        ]\n        },\n        {\n            \"type\": \"message\",\n            \"text\": \"ZOOM-1000 New Bot message edit Feature\",\n            \"editable\": true,\n            \"event_id\": \"Title_Msg_Edit\",\n            \"event\": \"sendHttpMsg\"\n        },\n         {\n        \"type\": \"fields\",\n        \"items\": [\n          {\n            \"key\": \"China\",\n            \"value\": \"CN\"\n          },\n          {\n            \"key\": \"USA\",\n            \"value\": \"US\",\n            \"link\": \"https://zoom.us\"\n          }\n        ]\n      },\n      {\n        \"type\": \"attachments\",\n        \"resource_url\": \"https://catalog.openebooks.us/collection/groups/book/USOEI%2FAxis%2520360%2520ID%2F0016542675\",\n        \"img_url\": \"https://d3pqhns20516vc.cloudfront.net/scaled/300/Content%20Cafe/ISBN/9781481446501/cover.jpg\",\n        \"ext\": \"pdf\",\n        \"size\": 1000\n      }\n    ]\n}; //message to the group\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 890,
+        "y": 780,
+        "wires": [
+            [
+                "6263d41d.898d4c"
+            ]
+        ]
+    },
+    {
+        "id": "9260167.0a1f1e8",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "migrate",
+        "func": "msg.zoommsg = msg.payload.payload;\nmsg.WWSspaceId = msg.payload.payload.cmd.split(\" \")[1];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 880,
+        "y": 700,
+        "wires": [
+            [
+                "629c9623.fd22f8"
+            ]
+        ]
+    },
+    {
+        "id": "7b62dc7c.c65a34",
+        "type": "switch",
+        "z": "5b8f98e1.463658",
+        "name": "special msg?",
+        "property": "payload.content",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "<$image|",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "<$file|",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "<@space>",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "<@",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "api.watsonwork.ibm.com/files/api/v1/files/file/",
+                "vt": "str"
+            },
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": true,
+        "outputs": 7,
+        "x": 1490,
+        "y": 620,
+        "wires": [
+            [
+                "e058d21a.35e7f"
+            ],
+            [
+                "5d5167d8.fbcb28"
+            ],
+            [
+                "90cbf56d.4b86e8"
+            ],
+            [
+                "8eee59da.69a568"
+            ],
+            [
+                "9f622723.ac6898"
+            ],
+            [
+                "5bb56368.c2771c"
+            ],
+            [
+                "c74b0615.e25c18",
+                "ea50e867.276ab8"
+            ]
+        ]
+    },
+    {
+        "id": "e058d21a.35e7f",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "<$image|",
+        "func": "var regex = /(<\\$image\\|)([^\\|]*)(\\|?.*\\>)/g;\nmsg.payload.content = msg.payload.content.replace(regex,\"https://api.watsonwork.ibm.com/files/api/v1/files/file/$2/content/noredirect\");\n\n//var regex = /https:[\\S]*\\/noredirect/i;\n//msg.urls = msg.urls.push(msg.payload.content.match(regex)); //oder search für den ersten Fund\n\n//for (let i = 0; i < urls.length; i++) {\n//    msg.url= urls;\n//}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1480,
+        "y": 260,
+        "wires": [
+            [
+                "486caefa.0a5aa",
+                "7b62dc7c.c65a34"
+            ]
+        ]
+    },
+    {
+        "id": "5d5167d8.fbcb28",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "<$file|",
+        "func": "var regex = /(<\\$file\\|)([^\\|]*)\\|([^\\|]*)\\|?([^\\|]*)(\\>)/g;\nmsg.payload.content = msg.payload.content.replace(regex,\"https://api.watsonwork.ibm.com/files/api/v1/files/file/$2/content/noredirect\");\nnode.warn(msg.payload.content);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1470,
+        "y": 300,
+        "wires": [
+            [
+                "1e2cc95b.3f94b7",
+                "7b62dc7c.c65a34"
+            ]
+        ]
+    },
+    {
+        "id": "8eee59da.69a568",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "@mention",
+        "func": "var regex = /(<[\\@][^\\|]*\\|)([^\\>]*)(\\>)/g;\nmsg.payload.content = msg.payload.content.replace(regex,\"*$2*\");\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1490,
+        "y": 380,
+        "wires": [
+            [
+                "fc5ca2a2.79394",
+                "7b62dc7c.c65a34"
+            ]
+        ]
+    },
+    {
+        "id": "5bb56368.c2771c",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "bot content",
+        "func": "for (let i = 0; i < msg.payload.annotations.length; i++) {\n\t\t\tconst annotation = JSON.parse(msg.payload.annotations[i]);\n\t\t\tif (annotation.type === 'generic') {\n\t\t\t\ti = msg.payload.annotations.length; // found the annotation so bail\n\t\t\t\tmsg.payload.content =  annotation.text;\n}\n}\nif (msg.payload.content === null){\n    msg.payload.content = \"no text available\";\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1490,
+        "y": 460,
+        "wires": [
+            [
+                "1183b184.0a057e",
+                "7b62dc7c.c65a34"
+            ]
+        ]
+    },
+    {
+        "id": "486caefa.0a5aa",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1670,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "1e2cc95b.3f94b7",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1670,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "fc5ca2a2.79394",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1670,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "1183b184.0a057e",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1670,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "c74b0615.e25c18",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "prepare message",
+        "func": "function convertTimestamp(timestamp) {\n  var d = new Date(timestamp),\t// Convert the passed timestamp to milliseconds\n\t\tyyyy = d.getFullYear(),\n\t\tmm = ('0' + (d.getMonth() + 1)).slice(-2),\t// Months are zero based. Add leading 0.\n\t\tdd = ('0' + d.getDate()).slice(-2),\t\t\t// Add leading 0.\n\t\thh = d.getHours(),\n\t\th = hh,\n\t\tmin = ('0' + d.getMinutes()).slice(-2),\t\t// Add leading 0.\n\t\ttime;\n\t\t\t\n\t// ie: 2013-02-18, 8:35 AM\t\n\ttime = yyyy + '-' + mm + '-' + dd + ', ' + h + ':' + min;\n\treturn time;\n}\n\nif (msg.wwsPerson !== undefined){\n    if (msg.wwsPerson.email !== null) {\n        msg.payload.head = msg.wwsPerson.displayName + \" (\" + msg.wwsPerson.email + \")\";\n    } else {\n        msg.payload.head = msg.wwsPerson.displayName;\n    }\n}\nelse {\n        msg.payload.head = \"Some bot wrote on \" + msg.payload.created;\n}\n\nmsg.payload.body = convertTimestamp(msg.payload.created) + \"\\n\" + msg.payload.content;\n\nmsg.answer = {};\nmsg.answer = {\n  \"head\": {\n    \"text\": msg.payload.head,\n    \"style\": {\n        \"color\": \"#888800\",\n        \"bold\": true\n    }\n  },\n  \"body\": [\n    {\n        \"type\": \"message\",\n        \"text\": msg.payload.body\n    }\n  ]\n}; //message to the group\n\nif (msg.attachments[0] !== undefined) {\n    msg.answer.body = msg.answer.body.concat(msg.attachments);\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1510,
+        "y": 720,
+        "wires": [
+            [
+                "6263d41d.898d4c"
+            ]
+        ]
+    },
+    {
+        "id": "ea50e867.276ab8",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1670,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "b0b92366.ce425",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "trigger",
+        "func": "msg.trigger=\"1\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 870,
+        "y": 640,
+        "wires": [
+            [
+                "fbbdb517.a62208"
+            ]
+        ]
+    },
+    {
+        "id": "d8fcc830.886148",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1090,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "1c2dccbf.b901c3",
+        "type": "switch",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "property": "payload.space.conversation.messages.pageInfo.hasNextPage",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 740,
+        "y": 460,
+        "wires": [
+            [
+                "d57f3cb.35d3fc"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "d57f3cb.35d3fc",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "gql2",
+        "func": "var d = Date.parse(msg.payload.space.conversation.messages.items[0].created) + 1;\n//node.warn (d, msg.payload.space.conversation.messages.items[0].created);\nmsg.payload = \"{ space (id: \\\"\" + msg.WWSspaceId + \"\\\") {      id      title     updated      conversation {        id        messages(last: 250, oldestTimestamp: \" + d + \"  ){          items{            id                        content        annotations   createdBy {              id              displayName              email            }            created          }         pageInfo {           hasNextPage           hasPreviousPage           startCursor           endCursor         }        }      }     }}\";\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 880,
+        "y": 460,
+        "wires": [
+            [
+                "504fe6b3.ec1fb8"
+            ]
+        ]
+    },
+    {
+        "id": "504fe6b3.ec1fb8",
+        "type": "delay",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "minute",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 1030,
+        "y": 460,
+        "wires": [
+            [
+                "c454fcf9.11c3a"
+            ]
+        ]
+    },
+    {
+        "id": "c454fcf9.11c3a",
+        "type": "wws-graphql",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "application": "",
+        "wwsBetaFeatures": true,
+        "wwsExperimentalFeatures": true,
+        "x": 880,
+        "y": 540,
+        "wires": [
+            [
+                "d8fcc830.886148",
+                "1c2dccbf.b901c3",
+                "bc3e7c47.30813"
+            ]
+        ]
+    },
+    {
+        "id": "629c9623.fd22f8",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "gql1",
+        "func": "msg.payload = \"{ space (id: \\\"\" + msg.WWSspaceId + \"\\\") {      id      title     updated      conversation {        id        messages(last: 250, oldestTimestamp:0  ){          items{            id                        content    annotations   createdBy {              id              displayName              email            }            created          }         pageInfo {           hasNextPage           hasPreviousPage           startCursor           endCursor         }        }      }     }}\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 690,
+        "y": 540,
+        "wires": [
+            [
+                "c454fcf9.11c3a"
+            ]
+        ]
+    },
+    {
+        "id": "bc3e7c47.30813",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "split messages",
+        "func": "var i;\n\nfor (i = msg.payload.space.conversation.messages.items.length; i > 0; i--) { \n    msg2={};\n    msg2.payload = {};\n    msg2.zoommsg = msg.zoommsg;\n    //node.warn(i);\n    //node.warn(msg.payload.space.conversation.messages.items[i]);\n    msg2.payload = msg.payload.space.conversation.messages.items[i-1];\n    msg2.wwsPerson = msg2.payload.createdBy;\n    msg2.wwsSpace = msg.payload.space.id;\n    msg2.urls=[];\n    msg2.attachments=[];\n    node.send(msg2);\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 900,
+        "y": 600,
+        "wires": [
+            [
+                "5a1dae00.568e04",
+                "fbbdb517.a62208"
+            ]
+        ]
+    },
+    {
+        "id": "5a1dae00.568e04",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1090,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "90e74902.dd5358",
+        "type": "inject",
+        "z": "5b8f98e1.463658",
+        "name": "next",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 670,
+        "y": 640,
+        "wires": [
+            [
+                "b0b92366.ce425"
+            ]
+        ]
+    },
+    {
+        "id": "c4bd27b2.715a68",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1250,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "a1b69446.6d03f8",
+        "type": "delay",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "4",
+        "timeoutUnits": "seconds",
+        "rate": "10",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 1660,
+        "y": 780,
+        "wires": [
+            [
+                "51cd350.2df71cc"
+            ]
+        ]
+    },
+    {
+        "id": "9f622723.ac6898",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "Download",
+        "func": "var regex = /https:[\\S]*\\/noredirect/;\n//msg.url = msg.urls[0]; //oder search für den ersten Fund\n//node.warn(msg.payload.content.match(regex));\nmsg.urls = msg.payload.content.match(regex);\nmsg.url = msg.payload.content.match(regex)[0];\nmsg.headers = {};\nmsg.headers.Authorization = \"Bearer \" + global.get(\"wwsJWT\");\nmsg.payloadBackup = msg.payload;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1480,
+        "y": 420,
+        "wires": [
+            [
+                "42f6d499.00972c",
+                "86febd03.a403b"
+            ]
+        ]
+    },
+    {
+        "id": "42f6d499.00972c",
+        "type": "http request",
+        "z": "5b8f98e1.463658",
+        "name": "GET URL",
+        "method": "GET",
+        "ret": "txt",
+        "url": "",
+        "tls": "",
+        "x": 1860,
+        "y": 420,
+        "wires": [
+            [
+                "5657004e.805fc",
+                "501b7eb2.79119"
+            ]
+        ]
+    },
+    {
+        "id": "5657004e.805fc",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "replace link",
+        "func": "regex = new RegExp(msg.url);\nmsg.payload = msg.payloadBackup;\nvar currentAttachment = msg.attachments.length + 1;\nmsg.payload.content = msg.payload.content.replace(regex, \"(*\" + currentAttachment + \")\");\nmsg.attUrl = msg.headers[\"x-content-location\"];\n\nfor (let i = 0; i < msg.payload.annotations.length; i++) {\n\tconst annotation = JSON.parse(msg.payload.annotations[i]);\n\tif (annotation.type === 'file') {\n\t\tmsg.payload.annotations.splice(i,1);\n\t\tmsg.filesize =  annotation.size;\n\t\tmsg.filename = \"/\" + msg.wwsSpace + \"/\" + annotation.fileId.split(\"@\")[3] + \"/\" + annotation.name;\n\t\tmsg.contentType = annotation.contentType;\n\t\tbreak;\n    }\n}\n\nmsg.headers = {};\nmsg.headers.Authorization = \"Bearer \" + global.get(\"wwsJWT\");\nmsg.payloadBackup = msg.payload;\nmsg.url = msg.attUrl;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1870,
+        "y": 480,
+        "wires": [
+            [
+                "21e21bb7.955cc4",
+                "38656b43.f02db4"
+            ]
+        ]
+    },
+    {
+        "id": "501b7eb2.79119",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 2030,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "86febd03.a403b",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1670,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "7cf9d27e.1a060c",
+        "type": "wws-token-viewer",
+        "z": "5b8f98e1.463658",
+        "application": "",
+        "refreshPeriod": 55,
+        "name": "",
+        "x": 270,
+        "y": 40,
+        "wires": [
+            [
+                "7a5c6187.be4e7"
+            ]
+        ]
+    },
+    {
+        "id": "b0dcaceb.acd4",
+        "type": "inject",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "900",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 40,
+        "wires": [
+            [
+                "7cf9d27e.1a060c"
+            ]
+        ]
+    },
+    {
+        "id": "7a5c6187.be4e7",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "savetoglobal",
+        "func": "global.set(\"wwsJWT\", msg.wwsToken.access_token);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 450,
+        "y": 40,
+        "wires": [
+            [
+                "5ef82b68.e58f14"
+            ]
+        ]
+    },
+    {
+        "id": "5ef82b68.e58f14",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 650,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "90cbf56d.4b86e8",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "@space",
+        "func": "var regex = /(<\\@space\\>)/g;\nmsg.payload.content = msg.payload.content.replace(regex,\"*all*\");\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1480,
+        "y": 340,
+        "wires": [
+            [
+                "7b62dc7c.c65a34",
+                "51ff5139.83453"
+            ]
+        ]
+    },
+    {
+        "id": "21e21bb7.955cc4",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 2030,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "38656b43.f02db4",
+        "type": "http request",
+        "z": "5b8f98e1.463658",
+        "name": "GET file",
+        "method": "GET",
+        "ret": "bin",
+        "url": "",
+        "tls": "",
+        "x": 1860,
+        "y": 540,
+        "wires": [
+            [
+                "9ccd8aec.8ac218",
+                "61576a3a.082ee4",
+                "cc5f0f32.f4147"
+            ]
+        ]
+    },
+    {
+        "id": "9ccd8aec.8ac218",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 2030,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "fbbdb517.a62208",
+        "type": "simple-queue",
+        "z": "5b8f98e1.463658",
+        "name": "queue1",
+        "firstMessageBypass": true,
+        "bypassInterval": "0",
+        "x": 1100,
+        "y": 600,
+        "wires": [
+            [
+                "7b62dc7c.c65a34",
+                "c4bd27b2.715a68"
+            ]
+        ]
+    },
+    {
+        "id": "51ff5139.83453",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1670,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "61576a3a.082ee4",
+        "type": "dropbox out",
+        "z": "5b8f98e1.463658",
+        "dropbox": "",
+        "filename": "",
+        "localFilename": "",
+        "name": "",
+        "x": 2040,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "cc5f0f32.f4147",
+        "type": "delay",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 2040,
+        "y": 620,
+        "wires": [
+            [
+                "8b3ffed0.2af07"
+            ]
+        ]
+    },
+    {
+        "id": "8b3ffed0.2af07",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "prepare share link",
+        "func": "msg.payload = '{ \"path\": \"/Apps/WWSMigrator'+ msg.filename + '\",\"settings\": {}}';\nmsg.url = \"https://api.dropboxapi.com/2/sharing/create_shared_link_with_settings\";\nmsg.headers ={};\nmsg.headers[\"Authorization\"]=\"Bearer dropBoxAppToken\";\nmsg.headers[\"Content-Type\"]=\"application/json\";\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 2070,
+        "y": 660,
+        "wires": [
+            [
+                "4f2d95bf.0a1f2c"
+            ]
+        ]
+    },
+    {
+        "id": "4f2d95bf.0a1f2c",
+        "type": "http request",
+        "z": "5b8f98e1.463658",
+        "name": "create link",
+        "method": "POST",
+        "ret": "obj",
+        "url": "",
+        "tls": "",
+        "x": 2040,
+        "y": 700,
+        "wires": [
+            [
+                "f2536491.4343b8",
+                "e5f04620.8eb6e8"
+            ]
+        ]
+    },
+    {
+        "id": "f2536491.4343b8",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 2030,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "e5f04620.8eb6e8",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "restore msg",
+        "func": "if (msg.payload.url !== undefined){\n    msg.attUrl = msg.payload.url.split(\"?\")[0]+\"?dl=1\";\n    var previewableExt = [\"jpg\",\"jpeg\",\"png\",\"bmp\",\"tif\",\"tiff\"];\n    var ext = msg.contentType.split(\"/\")[1];\n    if (previewableExt.indexOf(ext) == -1){\n        var previewUrl = \"https://www.dropbox.com/s/zyzlxxvfjghdky2/document_64.png?dl=1\";\n    } else {\n        var previewUrl = msg.attUrl;\n    }\n    msg.attachments.push(\n    {\n        \"type\": \"attachments\",\n        \"resource_url\": msg.attUrl,\n        \"ext\": ext,\n        \"img_url\": previewUrl,\n        \"size\": msg.filesize\n    }\n    );\n} else {\n    msg.attUrl = \"\";    \n}\nmsg.payload = msg.payloadBackup;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1850,
+        "y": 700,
+        "wires": [
+            [
+                "7b62dc7c.c65a34",
+                "a3de9d5a.ef6e1"
+            ]
+        ]
+    },
+    {
+        "id": "a3de9d5a.ef6e1",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 1840,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "4c3552a.f7f2fac",
+        "type": "comment",
+        "z": "5b8f98e1.463658",
+        "name": "Zoom bot urls (not all necessary)",
+        "info": "",
+        "x": 150,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "d5a9fe88.a7d77",
+        "type": "comment",
+        "z": "5b8f98e1.463658",
+        "name": "WWSquery",
+        "info": "",
+        "x": 670,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "7472419e.71d7d",
+        "type": "comment",
+        "z": "5b8f98e1.463658",
+        "name": "WWS Message handling",
+        "info": "",
+        "x": 1490,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "cafc3330.dd218",
+        "type": "comment",
+        "z": "5b8f98e1.463658",
+        "name": "WWS file content handling",
+        "info": "",
+        "x": 1910,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "ef876219.d9f4b",
+        "type": "comment",
+        "z": "5b8f98e1.463658",
+        "name": "Zoom post message",
+        "info": "",
+        "x": 1870,
+        "y": 840,
+        "wires": []
+    }
+]
