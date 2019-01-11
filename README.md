@@ -10,6 +10,7 @@ A bot in zoom that uses a bot in IBM Watson Workspace (WWS) to replay a chat fro
 4) a node red installation that can access the internet
 5) the watson workspace node collection from Stefano Pogliani named node-red-contrib-wws
 6) the dropbox nodes named node-red-node-dropbox
+7) the simple message queue node from node-red-contrib-simple-message-queue for better controlling the flow of messages
 
 I replaced the credentials in the code with dummy names like zoomClientSecret or zoomClientId, so have a look at it to replace it appropriately.
 
