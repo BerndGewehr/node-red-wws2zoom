@@ -22,5 +22,5 @@ Then, execute the following oAuth from a zoom admin account of the account where
 
 `success`
 
-The bot gives help when he does not understand the massage:
+The bot gives help when he does not understand the message:
 ![My image](https://github.com/BerndGewehr/wws2zoom/blob/master/docs/error.jpg)
