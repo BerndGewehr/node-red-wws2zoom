@@ -6,7 +6,7 @@ A bot in zoom that uses a bot in IBM Watson Workspace (WWS) to replay a chat fro
 ## Disclaimer
 Please be aware that I am not a professional developer and that this project is at a POC level of market readiness!
 
-## Prerequisites:
+## Prerequisites
 1) a zoom bot on https://marketplace.zoom.us **inside of the zoom account where you want to use it**, permitted to access the im.chat features and have a slash command /wws with an URL that matches your httpIn node for the wwsbot node (../zoom/wwsbot) (don't need to submit the app, skip the last step!)
 2) a wws bot on https://developer.watsonwork.ibm.com/apps that is member of the space you want to migrate
 3) a dropbox app on https://www.dropbox.com/developers/apps to store attachments and images from the wws stream
@@ -18,7 +18,7 @@ Please be aware that I am not a professional developer and that this project is 
 I replaced the credentials in the code with dummy names like zoomClientSecret or zoomClientId, so have a look at it to replace it appropriately.
 
 ## Activating the bot for your account
-You may have to install the new app by clicking "install" in the follwoing URL:
+You may have to install the new app by clicking "install" in the following URL:
 
 `https://<myNodeRedHost>/zoom/install`
 
@@ -32,4 +32,4 @@ Please consider that as of now zoom bots are not capable of multi-tenancy yet. Y
 The bot gives help when he does not understand the message:
 ![My image](https://github.com/BerndGewehr/node-red-wws2zoom/blob/master/docs/error.jpg)
 
-If the command is sent correctly, the bot will read the messages from WWS oldest-to-newest and post them into the given zoom chat where you sent the slash-command.
+If the command is sent correctly, the bot will read the messages from WWS oldest-to-newest and post them into the given zoom chat where you sent the slash-command. Be sure that you added the wws app to the appropriate space in wws. Otherwise we are not allowed to read the wws content. The dropbox app/folder is needed ecause as of now, zoom bots can't post files and pictures to the stream. So we post dropbox public URLs instead and enjoy the unfurling inline preview from zoom.
