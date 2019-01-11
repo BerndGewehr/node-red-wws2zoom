@@ -35,6 +35,165 @@
         "wires": []
     },
     {
+        "id": "7dafe9e5.42d118",
+        "type": "http in",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "url": "/zoom/oAuth",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 100,
+        "y": 220,
+        "wires": [
+            [
+                "d3699b02.fc1be8",
+                "965b9ab3.e29228"
+            ]
+        ]
+    },
+    {
+        "id": "d3699b02.fc1be8",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 250,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "ddc2b8e6.2b77e8",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "func": "const zoomClientId = \"zoomClientId\";\nconst zoomClientSecret = \"zoomClintSecret\";\nconst zoomtokenep = \"https://zoom.us/oauth/token\";\nconst myappredirect = \"myNodeRedURL/zoom/oAuth\";\nmsg.headers={};\nif (msg.req.query.code) {\n    msg.headers.authorization = \"Basic \" + new Buffer(zoomClientId + ':' +  zoomClientSecret).toString('base64');\n    msg.url = zoomtokenep + '?grant_type=authorization_code&code=' + msg.req.query.code + '&redirect_uri=' + myappredirect;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 370,
+        "y": 220,
+        "wires": [
+            [
+                "cf100d83.a741f",
+                "f78625.497ca9d8"
+            ]
+        ]
+    },
+    {
+        "id": "cf100d83.a741f",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 530,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "f78625.497ca9d8",
+        "type": "http request",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "url": "",
+        "tls": "",
+        "x": 550,
+        "y": 220,
+        "wires": [
+            [
+                "203d916e.034f7e",
+                "b24563b2.29936"
+            ]
+        ]
+    },
+    {
+        "id": "965b9ab3.e29228",
+        "type": "switch",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "property": "req.query.code",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 250,
+        "y": 220,
+        "wires": [
+            [
+                "ddc2b8e6.2b77e8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "203d916e.034f7e",
+        "type": "debug",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "x": 710,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "4a952bfa.9c6104",
+        "type": "http response",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 860,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "b24563b2.29936",
+        "type": "function",
+        "z": "5b8f98e1.463658",
+        "name": "",
+        "func": "if (msg.payload.reason !== undefined){\n    //error\n    msg.payload = msg.payload.reason;\n} else {\n    //success\n    msg.payload = \"success\";   \n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 710,
+        "y": 220,
+        "wires": [
+            [
+                "4a952bfa.9c6104"
+            ]
+        ]
+    },
+    {
+        "id": "80f77fa1.c2229",
+        "type": "comment",
+        "z": "5b8f98e1.463658",
+        "name": "oAuth for \"Install to Accout flow\"",
+        "info": "",
+        "x": 150,
+        "y": 180,
+        "wires": []
+    },
+    {
         "id": "ad1ef6a6.8f10d8",
         "type": "http in",
         "z": "5b8f98e1.463658",
