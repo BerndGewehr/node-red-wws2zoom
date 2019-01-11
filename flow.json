@@ -71,7 +71,7 @@
         "type": "function",
         "z": "5b8f98e1.463658",
         "name": "",
-        "func": "const zoomClientId = \"zoomClientId\";\nconst zoomClientSecret = \"zoomClintSecret\";\nconst zoomtokenep = \"https://zoom.us/oauth/token\";\nconst myappredirect = \"myNodeRedURL/zoom/oAuth\";\nmsg.headers={};\nif (msg.req.query.code) {\n    msg.headers.authorization = \"Basic \" + new Buffer(zoomClientId + ':' +  zoomClientSecret).toString('base64');\n    msg.url = zoomtokenep + '?grant_type=authorization_code&code=' + msg.req.query.code + '&redirect_uri=' + myappredirect;\n}\nreturn msg;",
+        "func": "const zoomClientId = \"zoomClientId\";\nconst zoomClientSecret = \"zoomClientSecret\";\nconst zoomtokenep = \"https://zoom.us/oauth/token\";\nconst myappredirect = \"myNodeRedURL/zoom/oAuth\";\nmsg.headers={};\nif (msg.req.query.code) {\n    msg.headers.authorization = \"Basic \" + new Buffer(zoomClientId + ':' +  zoomClientSecret).toString('base64');\n    msg.url = zoomtokenep + '?grant_type=authorization_code&code=' + msg.req.query.code + '&redirect_uri=' + myappredirect;\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 370,
