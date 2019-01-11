@@ -17,6 +17,7 @@ Please be aware that I am not a professional developer and that this project is 
 
 I replaced the credentials in the code with dummy names like zoomClientSecret or zoomClientId, so have a look at it to replace it appropriately.
 
+## Activating the bot for your account
 You may have to install the new app by clicking "install" in the follwoing URL:
 
 `https://<myNodeRedHost>/zoom/install`
@@ -25,5 +26,10 @@ Then, execute the following oAuth from a zoom admin account of the account where
 
 `success`
 
+Please consider that as of now zoom bots are not capable of multi-tenancy yet. You have to do all you do in ONE zoom account and the bot will work only there.
+
+## Result
 The bot gives help when he does not understand the message:
 ![My image](https://github.com/BerndGewehr/wws2zoom/blob/master/docs/error.jpg)
+
+If the command is sent correctly, the bot will read the messages from WWS oldest-to-newest and post them into the given zoom chat where you sent the slash-command.
