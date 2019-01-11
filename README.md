@@ -23,4 +23,4 @@ Then, execute the following oAuth from a zoom admin account of the account where
 `success`
 
 The bot gives help when he does not understand the massage:
-![My image](https://github.com/BerndGewehr/wws2zoom/blob/master/docs/image.jpg)
+![My image](https://github.com/BerndGewehr/wws2zoom/blob/master/docs/error.jpg)
