@@ -8,7 +8,7 @@ A bot in zoom that uses a bot in IBM Watson Workspace (WWS) to replay a chat fro
 2) a wws bot on https://developer.watsonwork.ibm.com/apps that is member of the space you want to migrate
 3) a dropbox app on https://www.dropbox.com/developers/apps to store attachments and images from the wws stream
 4) a node red installation that can access the internet
-5) the watson workspace node collection from Stefano Pogliani named node-red-contrib-wws
+5) the watson workspace node collection from @stefanopog named node-red-contrib-wws
 6) the dropbox nodes named node-red-node-dropbox
 7) the simple message queue node from node-red-contrib-simple-message-queue for better controlling the flow of messages
 
