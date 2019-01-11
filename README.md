@@ -30,6 +30,6 @@ Please consider that as of now zoom bots are not capable of multi-tenancy yet. Y
 
 ## Result
 The bot gives help when he does not understand the message:
-![My image](https://github.com/BerndGewehr/wws2zoom/blob/master/docs/error.jpg)
+![My image](https://github.com/BerndGewehr/node-red-wws2zoom/blob/master/docs/error.jpg)
 
 If the command is sent correctly, the bot will read the messages from WWS oldest-to-newest and post them into the given zoom chat where you sent the slash-command.
