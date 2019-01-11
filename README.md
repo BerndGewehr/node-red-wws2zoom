@@ -3,6 +3,9 @@ A bot in zoom that uses a bot in IBM Watson Workspace (WWS) to replay a chat fro
 
 `/wws @migrate <wwsSpaceID>`
 
+## Disclaimer
+Please be aware that I am not a prefessional developer and that this project is at a POC level of market readiness!
+
 ## Prerequisites:
 1) a zoom bot on https://marketplace.zoom.us **inside of the zoom account where you want to use it**, permitted to access the im.chat features and have a slash command /wws with an URL that matches your httpIn node for the wwsbot node (../zoom/wwsbot) (don't need to submit the app, skip the last step!)
 2) a wws bot on https://developer.watsonwork.ibm.com/apps that is member of the space you want to migrate
