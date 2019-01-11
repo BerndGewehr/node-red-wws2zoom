@@ -21,3 +21,6 @@ You my have to install the new app by clicking "install" in the follwoing URL:
 Then, execute the following oAuth from a zoom admin account of the account where you want to add and you should see:
 
 `success`
+
+The bot gives help when he does not understand the massage:
+![My image](https://github.com/BerndGewehr/wws2zoom/blob/master/docs/image.jpg)
