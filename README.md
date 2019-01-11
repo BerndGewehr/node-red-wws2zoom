@@ -17,7 +17,7 @@ Please be aware that I am not a professional developer and that this project is 
 
 I replaced the credentials in the code with dummy names like zoomClientSecret or zoomClientId, so have a look at it to replace it appropriately.
 
-You my have to install the new app by clicking "install" in the follwoing URL:
+You may have to install the new app by clicking "install" in the follwoing URL:
 
 `https://<myNodeRedHost>/zoom/install`
 
